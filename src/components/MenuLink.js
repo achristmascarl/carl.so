@@ -15,6 +15,11 @@ export default function MenuLink({ href, active, text }) {
           'rounded-md',
           'text-sm',
           'font-medium',
+          'focus:outline-none',
+          'focus:ring-2',
+          'focus:ring-offset-2',
+          'focus:ring-offset-gray-200',
+          'focus:ring-white',
         )}
       >{text}</a>
     </Link>

@@ -10,6 +10,14 @@ export default function Layout({ children, home, contact }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.png" />
+        <meta
+          name="description"
+          content="a personal website"
+        />
+        <meta
+          property="og:image"
+          content="/icon.png"
+        />
       </Head>
       <div
         className={c(
@@ -44,6 +52,8 @@ export default function Layout({ children, home, contact }) {
               <div
                 className={c(
                   'flex',
+                  'w-full',
+                  'justify-between',
                   'items-center'
                 )}
               >
@@ -64,7 +74,7 @@ export default function Layout({ children, home, contact }) {
                 <div
                   className={c(
                     'hidden',
-                    'md:block',
+                    'sm:block',
                   )}
                 >
                   <div
@@ -89,7 +99,7 @@ export default function Layout({ children, home, contact }) {
                 </div>
               </div>
 
-              <div className="-mr-2 flex md:hidden">
+              <div className="-mr-2 flex sm:hidden">
                 <button
                   className={c(
                     'bg-white',
@@ -153,7 +163,7 @@ export default function Layout({ children, home, contact }) {
           </div>
 
           <div className={c(
-            'md:hidden',
+            'sm:hidden',
             menuOpen ?
               '' : 'hidden',
           )}>
@@ -162,8 +172,10 @@ export default function Layout({ children, home, contact }) {
                 'px-2',
                 'pt-2',
                 'pb-3',
-                'space-y-1',
                 'sm:px-3',
+                'flex',
+                'justify-end',
+                'items-center',
               )}
             >
               <MenuLink

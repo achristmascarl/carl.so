@@ -1,15 +1,23 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { c } from '../utils';
 import MenuLink from './MenuLink';
 
-export default function Layout({ children, home, contact }) {
+export default function Layout({ children, home, cats }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href={
+            'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
+            '&family=Source+Sans+Pro:wght@400;700&display=swap'
+          }
+          rel="stylesheet"
+        />
         <meta
           name="description"
           content="a personal website"
@@ -30,6 +38,11 @@ export default function Layout({ children, home, contact }) {
         <nav
           className={c(
             'bg-white',
+            'border-b',
+            'border-gray-200',
+            'fixed',
+            'w-full',
+            'top-0',
           )}
         >
           <div
@@ -68,7 +81,7 @@ export default function Layout({ children, home, contact }) {
                       'w-14',
                     )}
                     src="/icon.png"
-                    alt="Carl"
+                    alt="Carl Logo"
                   />
                 </div>
                 <div
@@ -90,11 +103,11 @@ export default function Layout({ children, home, contact }) {
                       active={home}
                       text={'Home'}
                     />
-                    <MenuLink
-                      href={'/contact'}
-                      active={contact}
-                      text={'Contact'}
-                    />
+                    {/* <MenuLink
+                      href={'/cats'}
+                      active={cats}
+                      text={'cats'}
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -183,18 +196,18 @@ export default function Layout({ children, home, contact }) {
                 active={home}
                 text={'Home'}
               />
-              <MenuLink
-                href={'/contact'}
-                active={contact}
-                text={'Contact'}
-              />
+              {/* <MenuLink
+                href={'/cats'}
+                active={cats}
+                text={'cats'}
+              /> */}
             </div>
           </div>
         </nav>
-        <main>{children}</main>
+        <main className={c('pt-16')}>{children}</main>
         <footer
           className={c(
-            'bg-white',
+            'bg-gray-50',
           )}
         >
           <div
@@ -209,9 +222,10 @@ export default function Layout({ children, home, contact }) {
             <div
               className={c(
                 'flex',
+                'flex-col',
                 'items-center',
                 'justify-center',
-                'h-16',
+                'h-24',
               )}
             >
               <div
@@ -221,6 +235,19 @@ export default function Layout({ children, home, contact }) {
                 )}
               >
                 Built with 🍠 by Carl ©️ {(new Date()).getFullYear()}
+              </div>
+              <div
+                className={c(
+                  'flex',
+                  'items-center',
+                )}
+              >
+                <a
+                  href="https://github.com/achristmascarl/carl.so"
+                  target="_blank"
+                >
+                  GitHub repo
+                </a>
               </div>
             </div>
           </div>

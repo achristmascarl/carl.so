@@ -14,7 +14,7 @@ export default function Layout({ children, home, cats }) {
         <link
           href={
             'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
-            '&family=Source+Sans+Pro:wght@400;700&display=swap'
+            '&family=Open+Sans:wght@400;700&display=swap'
           }
           rel="stylesheet"
         />

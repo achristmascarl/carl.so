@@ -24,7 +24,7 @@ export default function Layout({ children, home, cats }) {
         />
         <meta
           property="og:image"
-          content="/icon.png"
+          content="/carl-framed-floral-compressed.png"
         />
       </Head>
       <div

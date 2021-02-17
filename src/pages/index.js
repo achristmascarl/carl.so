@@ -23,6 +23,10 @@ export default function Home() {
           name="og:title"
           content={siteTitle}
         />
+        <meta
+          property="og:image"
+          content="/carl-framed-floral-compressed.png"
+        />
       </Head>
       <div
         className={c(

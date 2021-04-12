@@ -1,10 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      'sans': ['Open Sans'],
-      'serif': ['PT Serif'],
-    },
     extend: {
       colors: {
         'teal': {

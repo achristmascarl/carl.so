@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { c } from '../utils';
 import MenuLink from './MenuLink';
 
@@ -103,11 +102,11 @@ export default function Layout({ children, home, cats }) {
                       active={home}
                       text={'Home'}
                     />
-                    {/* <MenuLink
+                    <MenuLink
                       href={'/cats'}
                       active={cats}
-                      text={'cats'}
-                    /> */}
+                      text={'Cats'}
+                    />
                   </div>
                 </div>
               </div>
@@ -196,11 +195,11 @@ export default function Layout({ children, home, cats }) {
                 active={home}
                 text={'Home'}
               />
-              {/* <MenuLink
+              <MenuLink
                 href={'/cats'}
                 active={cats}
-                text={'cats'}
-              /> */}
+                text={'Cats'}
+              />
             </div>
           </div>
         </nav>

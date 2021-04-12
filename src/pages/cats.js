@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import { c } from '../utils';
+import { motion } from 'framer-motion';
 
 const siteTitle = 'Carl | Cats';
 const siteFavicon = '😺';
 
 export default function Home() {
   return (
-    <Layout contact>
+    <Layout cats>
       <Head>
         <link
           rel="icon"
@@ -21,35 +22,49 @@ export default function Home() {
         <title>{siteTitle}</title>
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <div
-        className={c(
-          'max-w-7xl',
-          'md:h-screen',
-          'mx-auto',
-          'px-4',
-          'sm:px-6',
-          'lg:px-8',
-        )}
+      <motion.div
+        initial="initial"
+        animate="enter"
+        variants={{
+          initial: {
+            opacity: 0,
+          },
+          enter: {
+            opacity: 1,
+            duration: 0.5,
+          },
+        }}
       >
         <div
           className={c(
-            'p-5',
+            'max-w-7xl',
+            'md:h-screen',
             'mx-auto',
-            'max-w-2xl',
-            'flex',
-            'flex-col',
-            'justify-center',
-            'text-center',
+            'px-4',
+            'sm:px-6',
+            'lg:px-8',
           )}
         >
-          <h1>
-            Coming Soon
-          </h1>
-          <h2>
-            Pictures of cats :0
-          </h2>
+          <div
+            className={c(
+              'p-5',
+              'mx-auto',
+              'max-w-2xl',
+              'flex',
+              'flex-col',
+              'justify-center',
+              'text-center',
+            )}
+          >
+            <h1>
+              Coming Soon
+            </h1>
+            <h2>
+              Pictures of cats :0
+            </h2>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </Layout>
   )
 }

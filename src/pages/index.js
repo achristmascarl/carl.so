@@ -149,7 +149,7 @@ export default function Home() {
               If you want to get in touch, please 
               reach out via{' '}
               <a
-                href="https://www.linkedin.com/in/carl-z-liu/"
+                href="https://www.linkedin.com/in/achristmascarl/"
                 target="_blank"
               >
                 LinkedIn

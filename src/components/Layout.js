@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { c } from '../utils';
 import MenuLink from './MenuLink';
 
-export default function Layout({ children, home, cats }) {
+export default function Layout({ children, home, cats, icon }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -74,14 +74,13 @@ export default function Layout({ children, home, cats }) {
                     'flex-shrink-0',
                   )}
                 >
-                  <img
+                  <text
                     className={c(
-                      'h-14',
-                      'w-14',
+                      'text-2xl'
                     )}
-                    src="/icon.png"
-                    alt="Carl Logo"
-                  />
+                  >
+                    { icon }
+                  </text>
                 </div>
                 <div
                   className={c(

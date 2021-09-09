@@ -3,24 +3,24 @@ import Layout from '../components/Layout';
 import { c } from '../utils';
 import { motion } from 'framer-motion';
 
-const siteTitle = 'Carl | Cats';
-const siteFavicon = '😺';
+const pageTitle = 'Carl | Cats';
+const pageIcon = '😺';
 
 export default function Home() {
   return (
-    <Layout cats>
+    <Layout cats icon={pageIcon}>
       <Head>
         <link
           rel="icon"
           href={
             'data:image/svg+xml,' +
             '<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>' +
-              `<text y=%22.9em%22 font-size=%2290%22>${siteFavicon}</text>` +
+              `<text y=%22.9em%22 font-size=%2290%22>${pageIcon}</text>` +
             '</svg>'
           }
         />
-        <title>{siteTitle}</title>
-        <meta name="og:title" content={siteTitle} />
+        <title>{pageTitle}</title>
+        <meta name="og:title" content={pageTitle} />
       </Head>
       <motion.div
         initial="initial"

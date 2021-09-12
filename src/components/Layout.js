@@ -76,7 +76,7 @@ export default function Layout({ children, home, cats, icon }) {
                 >
                   <text
                     className={c(
-                      'text-2xl'
+                      'text-3xl'
                     )}
                   >
                     { icon }

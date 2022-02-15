@@ -1,12 +1,26 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import { c } from '../utils';
+import { Tab } from '@headlessui/react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+
 
 const pageTitle = 'Carl | Home';
 const pageIcon = '🏠';
 
+const tabStyle = (selected) => c(
+  'w-full py-2',
+  'rounded-md',
+  'focus:outline-none',
+  selected
+    ? 'bg-white shadow font-bold'
+    : 'text-gray-500 hover:bg-white/[0.5] hover:text-gray'
+);
+
 export default function Home() {
+  const [pictureIndex, setPictureIndex] = useState(0);
+
   return (
     <Layout home icon={pageIcon}>
       <Head>
@@ -68,6 +82,35 @@ export default function Home() {
               Naruto fan, and occasional 
               needlepoint maker.
             </h2>
+            <Tab.Group
+              onChange={(index) => {
+                setPictureIndex(index);
+                // console.log('changed to:', index);
+                // console.log(pictureIndex);
+              }}
+            >
+              <Tab.List
+                className={c(
+                  'flex',
+                  'p-1',
+                  'bg-gray-50',
+                  'rounded-md',
+                  'mx-3',
+                  'shadow-inner'
+                )}
+              >
+                <Tab
+                  className={({ selected }) => tabStyle(selected)}
+                >
+                  no hair
+                </Tab>
+                <Tab
+                  className={({ selected }) => tabStyle(selected)}
+                >
+                  hair
+                </Tab>
+              </Tab.List>
+            </Tab.Group>
           </div>
           <div
             className={c(
@@ -98,9 +141,16 @@ export default function Home() {
             >
               <img
                 className={c(
-
+                  (pictureIndex === 1 ?
+                    'rounded-full' : ''),
                 )}
-                src="/carl-framed-floral-compressed.png"
+                src={
+                  pictureIndex === 0 ?
+                    '/carl-framed-floral-compressed.png' :
+                  pictureIndex === 1 ?
+                    '/carl-outlined-bg-min.jpg' :
+                    '/carl-framed-floral-compressed.png'
+                }
               />
             </motion.div>
           </div>

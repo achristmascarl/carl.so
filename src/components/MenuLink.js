@@ -7,8 +7,8 @@ export default function MenuLink({ href, active, text }) {
       <a
         className={c(
           active ?
-            'bg-gray-200' : 
-            'hover:bg-gray-100',
+            'bg-gray-50 font-bold' : 
+            'hover:bg-gray-50',
           'text-black',
           'px-3',
           'py-2',
@@ -18,7 +18,7 @@ export default function MenuLink({ href, active, text }) {
           'focus:outline-none',
           'focus:ring-2',
           'focus:ring-offset-2',
-          'focus:ring-offset-gray-200',
+          'focus:ring-offset-gray-50',
           'focus:ring-white',
         )}
       >{text}</a>

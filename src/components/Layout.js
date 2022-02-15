@@ -71,7 +71,7 @@ export default function Layout({ children, home, cats, icon }) {
               >
                 <div
                   className={c(
-                    'flex-shrink-0',
+                    'shrink-0',
                   )}
                 >
                   <text

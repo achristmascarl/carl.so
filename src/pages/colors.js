@@ -3,12 +3,12 @@ import Layout from '../components/Layout';
 import { c } from '../utils';
 import { motion } from 'framer-motion';
 
-const pageTitle = 'carl | cats';
+const pageTitle = 'carl | colors';
 const pageIcon = '😺';
 
 export default function Home() {
   return (
-    <Layout cats icon={pageIcon}>
+    <Layout colors icon={pageIcon}>
       <Head>
         <link
           rel="icon"
@@ -57,10 +57,10 @@ export default function Home() {
             )}
           >
             <h1>
-              coming soon
+              colors
             </h1>
             <h2>
-              Pictures of cats :0
+              Colors that I like and use frequently; this page is mainly for myself lol
             </h2>
           </div>
         </div>

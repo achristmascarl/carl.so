@@ -19,7 +19,7 @@ export default function Home() {
     <div
       className={c(
         'max-w-7xl',
-        'md:h-screen',
+        'md:min-h-screen',
         'mx-auto',
         'px-4',
         'sm:px-6',

@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import { c } from '../utils';
+import { c, colors } from '../utils';
 import { motion } from 'framer-motion';
 
 const pageTitle = 'carl | colors';
-const pageIcon = '😺';
+const pageIcon = '🎨';
 
 export default function Home() {
   return (
@@ -38,7 +38,7 @@ export default function Home() {
         <div
           className={c(
             'max-w-7xl',
-            'md:h-screen',
+            'md:min-h-screen',
             'mx-auto',
             'px-4',
             'sm:px-6',
@@ -60,8 +60,49 @@ export default function Home() {
               colors
             </h1>
             <h2>
-              Colors that I like and use frequently; this page is mainly for myself lol
+              Personal color palette generated and named by <a href='https://coolors.co/' target='_blank'>coolors.co</a>; this page is mainly a utility for myself lol
             </h2>
+          </div>
+          <div
+            className={c(
+              'p-5',
+              'mx-auto',
+              'max-w-2xl',
+              'flex',
+              'flex-col',
+              'justify-center',
+              'text-center',
+            )}
+          >
+            <div className="overflow-x-auto w-full">
+              <table className="table w-full">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Hex</th>
+                    <th>RGB</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {colors.map(color => { return (
+                    <tr key={color.hex}>
+                      <th className="w-fit bg-gray-50">
+                        <div className="avatar flex justify-center">
+                          <div
+                            className="w-5 h-5 rounded"
+                            style={{backgroundColor: `#${color.hex}`}}
+                          />
+                        </div>
+                      </th>
+                      <td className="bg-gray-50">{color.name}</td>
+                      <td className="bg-gray-50">{color.hex}</td>
+                      <td className="bg-gray-50">{color.rgb}</td>
+                    </tr>
+                    )})}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </motion.div>

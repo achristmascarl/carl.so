@@ -7,8 +7,66 @@ export function c(...classNames) {
 }
 
 export const colors = [
-  {},
-  {},
+  {
+    'name': 'teal blue',
+    'type': 'core',
+    'hex': '2A7B88',
+    'rgb': '42, 123, 136'
+  },
+  {
+    'name': 'deep koamaru',
+    'type': 'core',
+    'hex': '3D315B',
+    'rgb': '61, 49, 91'
+  },
+  {
+    'name': 'jazzberry jam',
+    'type': 'core',
+    'hex': '991862',
+    'rgb': '153, 24, 98'
+  },
+  {
+    'name': 'independence',
+    'type': 'core',
+    'hex': '425569',
+    'rgb': '66, 85, 105'
+  },
+  {
+    'name': 'asparagus',
+    'type': 'core',
+    'hex': '7EA16B',
+    'rgb': '126, 161, 107'
+  },
+  {
+    'name': 'spanish pink',
+    'type': 'accent',
+    'hex': 'EBBAB9',
+    'rgb': '235, 186, 185'
+  },
+  {
+    'name': 'english vermillion',
+    'type': 'accent',
+    'hex': 'CC444B',
+    'rgb': '204, 68, 75'
+  },
+  {
+    'name': 'pastel blue',
+    'type': 'accent',
+    'hex': 'B0D0D3',
+    'rgb': '176, 208, 211'
+  },
+  {
+    'name': 'light apricot',
+    'type': 'accent',
+    'hex': 'FCD7AD',
+    'rgb': '252, 215, 173'
+  },
+  {
+    'name': 'deep saffron',
+    'type': 'accent',
+    'hex': 'FFA630',
+    'rgb': '255, 166, 48'
+  },
 ]
 
 export const icebreakers = [

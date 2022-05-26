@@ -9,14 +9,6 @@ export default function Layout({ children, home, colors, cats, icon }) {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href={
-            'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
-            '&family=Open+Sans:wght@400;700&display=swap'
-          }
-          rel="stylesheet"
-        />
         <meta
           name="description"
           content="a personal website"

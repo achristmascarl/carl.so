@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import { c } from '../utils';
 import { motion } from 'framer-motion';
 
-const pageTitle = 'Carl | Cats';
+const pageTitle = 'carl | cats';
 const pageIcon = '😺';
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
         <div
           className={c(
             'max-w-7xl',
-            'md:h-screen',
+            'md:min-h-screen',
             'mx-auto',
             'px-4',
             'sm:px-6',
@@ -57,7 +57,7 @@ export default function Home() {
             )}
           >
             <h1>
-              Coming Soon
+              coming soon
             </h1>
             <h2>
               Pictures of cats :0

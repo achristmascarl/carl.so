@@ -3,20 +3,12 @@ import Head from 'next/head';
 import { c } from '../utils';
 import MenuLink from './MenuLink';
 
-export default function Layout({ children, home, cats, icon }) {
+export default function Layout({ children, home, colors, cats, icon }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href={
-            'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
-            '&family=Open+Sans:wght@400;700&display=swap'
-          }
-          rel="stylesheet"
-        />
         <meta
           name="description"
           content="a personal website"
@@ -36,7 +28,10 @@ export default function Layout({ children, home, cats, icon }) {
       >
         <nav
           className={c(
-            'bg-white',
+            'z-50',
+            'backdrop-blur',
+            'bg-white/75',
+            'supports-backdrop-blur:bg-white/75',
             'border-b',
             'border-gray-200',
             'fixed',
@@ -74,13 +69,13 @@ export default function Layout({ children, home, cats, icon }) {
                     'shrink-0',
                   )}
                 >
-                  <text
+                  <span
                     className={c(
                       'text-2xl'
                     )}
                   >
                     { icon }
-                  </text>
+                  </span>
                 </div>
                 <div
                   className={c(
@@ -99,12 +94,17 @@ export default function Layout({ children, home, cats, icon }) {
                     <MenuLink
                       href={'/'}
                       active={home}
-                      text={'Home'}
+                      text={'home'}
+                    />
+                    <MenuLink
+                      href={'/colors'}
+                      active={colors}
+                      text={'colors'}
                     />
                     <MenuLink
                       href={'/cats'}
                       active={cats}
-                      text={'Cats'}
+                      text={'cats'}
                     />
                   </div>
                 </div>
@@ -192,12 +192,17 @@ export default function Layout({ children, home, cats, icon }) {
               <MenuLink
                 href={'/'}
                 active={home}
-                text={'Home'}
+                text={'home'}
+              />
+              <MenuLink
+                href={'/colors'}
+                active={colors}
+                text={'colors'}
               />
               <MenuLink
                 href={'/cats'}
                 active={cats}
-                text={'Cats'}
+                text={'cats'}
               />
             </div>
           </div>

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 
-const pageTitle = 'Carl | Home';
+const pageTitle = 'carl | home';
 const pageIcon = '🏠';
 
 const tabStyle = (selected) => c(
@@ -75,7 +75,7 @@ export default function Home() {
             )}
           >
             <h1>
-              Hi, I'm Carl.
+              hi, i'm carl.
             </h1>
             <h2>
               Avid Notion lover, shameless 

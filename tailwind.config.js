@@ -1,5 +1,8 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  daisyui: {
+    themes: false,
+  },
   theme: {
     extend: {
       colors: {
@@ -36,5 +39,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

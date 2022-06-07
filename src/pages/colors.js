@@ -74,7 +74,7 @@ export default function Home() {
               'text-center',
             )}
           >
-            <div className="overflow-x-auto">
+            <div className="z-0 overflow-x-auto">
               <table className="table w-full">
                 <thead>
                   <tr>

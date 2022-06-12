@@ -5,17 +5,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-          href={
-              'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
-              '&family=Open+Sans:wght@400;700&display=swap'
-          }
-          rel="stylesheet"
-          />
-          {process.env.NODE_ENV === "development" && (
-            <script src="https://cdn.tailwindcss.com"/>
-          )}
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link
+            href={
+                'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
+                '&family=Open+Sans:wght@400;700&display=swap'
+            }
+            rel="stylesheet"
+            />
         </Head>
         <body>
           <Main />

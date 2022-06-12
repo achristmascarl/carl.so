@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import { c, colors } from '../utils';
 import { motion } from 'framer-motion';
-import CopyIcon from '../components/CopyIcon';
 
 const pageTitle = 'carl | colors';
 const pageIcon = '🎨';

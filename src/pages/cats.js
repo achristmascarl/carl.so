@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import { c } from '../utils';
 import { motion } from 'framer-motion';
+import CopyIcon from '../components/CopyIcon';
 
 const pageTitle = 'carl | cats';
 const pageIcon = '😺';

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import { c, colors } from '../utils';
 import { motion } from 'framer-motion';
+import CopyIcon from '../components/CopyIcon';
 
 const pageTitle = 'carl | colors';
 const pageIcon = '🎨';
@@ -96,8 +97,22 @@ export default function Home() {
                         </div>
                       </th>
                       <td className="bg-gray-50">{color.name}</td>
-                      <td className="bg-gray-50">{color.hex}</td>
-                      <td className="bg-gray-50">{color.rgb}</td>
+                      <td className="bg-gray-50">
+                        <CopyIcon
+                          content={color.hex}
+                        />
+                        <div>
+                          {color.hex}
+                        </div>
+                      </td>
+                      <td className="bg-gray-50">
+                        <CopyIcon
+                          content={color.rgb}
+                        />
+                        <div>
+                          {color.rgb}
+                        </div>
+                      </td>
                     </tr>
                     )})}
                 </tbody>

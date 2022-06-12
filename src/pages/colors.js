@@ -98,19 +98,23 @@ export default function Home() {
                       </th>
                       <td className="bg-gray-50">{color.name}</td>
                       <td className="bg-gray-50">
-                        <CopyIcon
-                          content={color.hex}
-                        />
-                        <div>
-                          {color.hex}
+                        <div className='flex flex-row space-x-1 items-center'>
+                          <CopyIcon
+                            content={color.hex}
+                          />
+                          <div>
+                            {color.hex}
+                          </div>
                         </div>
                       </td>
                       <td className="bg-gray-50">
-                        <CopyIcon
-                          content={color.rgb}
-                        />
-                        <div>
-                          {color.rgb}
+                        <div className='flex flex-row space-x-1 items-center'>
+                          <CopyIcon
+                            content={color.rgb}
+                          />
+                          <div>
+                            {color.rgb}
+                          </div>
                         </div>
                       </td>
                     </tr>

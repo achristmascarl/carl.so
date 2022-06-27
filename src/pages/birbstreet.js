@@ -4,12 +4,12 @@ import { c } from '../utils';
 import { motion } from 'framer-motion';
 import CopyIcon from '../components/CopyIcon';
 
-const pageTitle = 'carl | cats';
-const pageIcon = '😺';
+const pageTitle = 'carl | BirbStreet';
+const pageIcon = '🐦🚏';
 
 export default function Home() {
   return (
-    <Layout cats icon={pageIcon}>
+    <Layout birbstreet icon={pageIcon}>
       <Head>
         <link
           rel="icon"
@@ -58,11 +58,20 @@ export default function Home() {
             )}
           >
             <h1>
-              coming soon
+              BirbStreet
             </h1>
             <h2>
-              Pictures of cats :0
+              BirbStreet allows you to mint NFTs that represent a short position on a tweet. Just a fun, collectable way to express disagreement and spice up discourse :0
             </h2>
+            <div>
+              <iframe
+                src="https://gateway.ipfscdn.io/ipfs/QmRPK2zjmkM8sodgCpyiCbLTvKGJwU3mWcwXwL2AWEBWym/nft-drop.html?contract=0x7a48c82ec6AB978011d00C7D5C251a55523CDD1b&chainId=137"
+                width="600px"
+                height="600px"
+                style={{maxWidth: "100%"}}
+                frameborder="0"
+              ></iframe>
+            </div>
           </div>
         </div>
       </motion.div>

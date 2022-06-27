@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { c } from '../utils';
 import MenuLink from './MenuLink';
 
-export default function Layout({ children, home, colors, cats, icon }) {
+export default function Layout({ children, home, colors, birbstreet, icon }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -101,11 +101,11 @@ export default function Layout({ children, home, colors, cats, icon }) {
                       active={colors}
                       text={'colors'}
                     />
-                    <MenuLink
-                      href={'/cats'}
-                      active={cats}
-                      text={'cats'}
-                    />
+                    {/* <MenuLink
+                      href={'/birbstreet'}
+                      active={birbstreet}
+                      text={'BirbStreet'}
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -199,11 +199,11 @@ export default function Layout({ children, home, colors, cats, icon }) {
                 active={colors}
                 text={'colors'}
               />
-              <MenuLink
-                href={'/cats'}
-                active={cats}
-                text={'cats'}
-              />
+              {/* <MenuLink
+                href={'/birbstreet'}
+                active={birbstreet}
+                text={'BirbStreet'}
+              /> */}
             </div>
           </div>
         </nav>

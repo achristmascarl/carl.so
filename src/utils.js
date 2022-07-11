@@ -67,6 +67,12 @@ export const colors = [
     'hex': 'FFA630',
     'rgb': '255, 166, 48'
   },
+  {
+    'name': 'birb blue',
+    'type': 'variant',
+    'hex': '1566B0',
+    'rgb': '21, 102, 176'
+  },
 ]
 
 export const icebreakers = [

@@ -1,12 +1,6 @@
-import Head from 'next/head';
-import Layout from '../components/Layout';
 import { c, icebreakers } from '../utils';
-import { motion } from 'framer-motion';
 
-const pageTitle = 'carl | icebreakers';
-const pageIcon = '🧊';
-
-export default function Home() {
+export default function Icebreakers() {
   function getIcebreaker() {
     if (icebreakers?.length > 0) {
       return icebreakers[Math.floor(Math.random() * icebreakers.length)];

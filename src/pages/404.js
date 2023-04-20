@@ -1,22 +1,22 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 import { c } from '../utils';
 import { motion } from 'framer-motion';
-import CopyIcon from '../components/CopyIcon';
 
-const pageTitle = 'carl | BirbStreet';
-const pageIcon = '🐦🚏';
+const pageTitle = 'carl | 404';
+const pageIcon = '😬';
 
-export default function Home() {
+export default function Custom404() {
   return (
-    <Layout birbstreet icon={pageIcon}>
+    <Layout icon={pageIcon}>
       <Head>
         <link
           rel="icon"
           href={
             'data:image/svg+xml,' +
             '<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>' +
-              `<text y=%22.9em%22 font-size=%2290%22>${pageIcon}</text>` +
+            `<text y=%22.9em%22 font-size=%2290%22>${pageIcon}</text>` +
             '</svg>'
           }
         />
@@ -55,23 +55,25 @@ export default function Home() {
               'flex-col',
               'justify-center',
               'text-center',
+              'place-items-center'
             )}
           >
             <h1>
-              BirbStreet
+              404
             </h1>
             <h2>
-              BirbStreet allows you to mint NFTs that represent a short position on a tweet. Just a fun, collectable way to express disagreement and spice up discourse :0
+              {"oops; this page could not be found :("}
             </h2>
-            <div>
-              <iframe
-                src="https://gateway.ipfscdn.io/ipfs/QmRPK2zjmkM8sodgCpyiCbLTvKGJwU3mWcwXwL2AWEBWym/nft-drop.html?contract=0x7a48c82ec6AB978011d00C7D5C251a55523CDD1b&chainId=137"
-                width="600px"
-                height="600px"
-                style={{maxWidth: "100%"}}
-                frameborder="0"
-              ></iframe>
-            </div>
+            <br />
+            <Link
+              href={'/'}
+            >
+              <button className={c(
+                'btn',
+              )}>
+                🏠 go home
+              </button>
+            </Link>
           </div>
         </div>
       </motion.div>

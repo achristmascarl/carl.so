@@ -11,6 +11,7 @@ export default function Custom404() {
   return (
     <Layout icon={pageIcon}>
       <Head>
+        <meta name="robots" content="noindex,nofollow" />
         <link
           rel="icon"
           href={

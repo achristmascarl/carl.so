@@ -15,6 +15,7 @@ export default function Redirect({ redirectData }) {
   return (
     <Layout icon={pageIcon}>
       <Head>
+        <meta name="robots" content="noindex,nofollow" />
         <link
           rel="icon"
           href={

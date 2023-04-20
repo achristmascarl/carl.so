@@ -1,12 +1,17 @@
 import Head from 'next/head';
 import Layout from '../../components/Layout';
 import { c } from '../../utils';
-import { motion } from 'framer-motion';
+import { redirects } from '../../../redirects';
 
-const pageTitle = 'carl | redirecting...';
 const pageIcon = '👉';
 
-export default function Home() {
+function redirect(url) {
+  if (typeof window !== 'undefined') {
+    window.location.href = url;
+  }
+}
+
+export default function Redirect({ redirectData }) {
   return (
     <Layout icon={pageIcon}>
       <Head>
@@ -19,8 +24,10 @@ export default function Home() {
             '</svg>'
           }
         />
-        <title>{pageTitle}</title>
-        <meta name="og:title" content={pageTitle} />
+        <title>carl | redirecting to {redirectData.name}...</title>
+        <meta name="og:title" content={`
+        carl | redirecting to ${redirectData.name}...`
+        } />
       </Head>
       <div
         className={c(
@@ -44,10 +51,32 @@ export default function Home() {
           )}
         >
           <h1>
-            redirecting...
+            redirecting to {redirectData.name}...
           </h1>
+          {redirect(redirectData.url)}
         </div>
       </div>
     </Layout>
-  )
+  );
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: Object.keys(redirects).map(redirectId => {
+      return {
+        params: {
+          id: redirectId,
+        },
+      };
+    }),
+    fallback: false,
+  }
+}
+
+export async function getStaticProps({ params }) {
+  return {
+    props: {
+      redirectData: { ...redirects[params.id] },
+    }
+  }
 }

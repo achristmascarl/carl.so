@@ -5,7 +5,6 @@ import TwitterIcon from './svg/TwitterIcon';
 
 export default function ExternalLink({href, text, iconName}) {
   function getIconComponent(icName) {
-    console.log(icName);
     switch (icName) {
       case 'github':
         return <GithubIcon/>;

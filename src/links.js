@@ -1,3 +1,7 @@
+import GithubIcon from './components/svg/GithubIcon';
+import LinkedinIcon from './components/svg/LinkedinIcon';
+import TwitterIcon from './components/svg/TwitterIcon';
+
 export const links = {
   'linkedin': {
     id: 'linkedin',
@@ -5,6 +9,7 @@ export const links = {
     name: 'LinkedIn',
     redirectActive: true,
     menuLink: true,
+    iconComponent: <LinkedinIcon/>,
   },
   'twitter': {
     id: 'twitter',
@@ -12,6 +17,7 @@ export const links = {
     name: 'Twitter',
     redirectActive: true,
     menuLink: false,
+    iconComponent: <TwitterIcon/>,
   },
   'github': {
     id: 'github',
@@ -19,5 +25,6 @@ export const links = {
     name: 'GitHub',
     redirectActive: true,
     menuLink: true,
+    iconComponent: <GithubIcon/>,
   },
 };

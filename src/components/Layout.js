@@ -1,10 +1,26 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { c } from '../utils';
-import MenuLink from './MenuLink';
+import RouterLink from './RouterLink';
+import ExternalLink from './ExternalLink';
+import { links } from '../links';
 
 export default function Layout({ children, home, colors, icon }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  function createLinkIcons() {
+    const menuLinksIds = Object.keys(links).filter(linkId => links[linkId].menuLink === true);
+    return menuLinksIds.map(linkId => {
+      return (
+        <ExternalLink
+          key={linkId}
+          href={links[linkId].url}
+          text={''}
+          iconName={links[linkId].id}
+        />
+      );
+    });
+  }
 
   return (
     <>
@@ -87,16 +103,16 @@ export default function Layout({ children, home, colors, icon }) {
                     className={c(
                       'ml-10',
                       'flex',
-                      'items-baseline',
+                      'items-center',
                       'space-x-4',
                     )}
                   >
-                    <MenuLink
+                    <RouterLink
                       href={'/'}
                       active={home}
                       text={'home'}
                     />
-                    <MenuLink
+                    <RouterLink
                       href={'/colors'}
                       active={colors}
                       text={'colors'}
@@ -120,6 +136,7 @@ export default function Layout({ children, home, colors, icon }) {
                         'focus:ring-white',
                       )}
                     >charades.ai</a>
+                    {createLinkIcons()}
                   </div>
                 </div>
               </div>
@@ -203,12 +220,12 @@ export default function Layout({ children, home, colors, icon }) {
                 'items-center',
               )}
             >
-              <MenuLink
+              <RouterLink
                 href={'/'}
                 active={home}
                 text={'home'}
               />
-              <MenuLink
+              <RouterLink
                 href={'/colors'}
                 active={colors}
                 text={'colors'}
@@ -232,6 +249,7 @@ export default function Layout({ children, home, colors, icon }) {
                   'focus:ring-white',
                 )}
               >charades.ai</a>
+              {createLinkIcons()}
             </div>
           </div>
         </nav>

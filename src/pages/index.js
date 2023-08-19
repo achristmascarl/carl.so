@@ -68,20 +68,17 @@ export default function Home() {
             className={c(
               'p-5',
               'mx-auto',
-              'max-w-2xl',
+              'w-full',
+              'max-w-sm',
               'flex',
               'flex-col',
               'justify-center',
+              'text-center',
             )}
           >
             <h1>
               hi, i'm carl.
             </h1>
-            <h2>
-              Avid Notion lover, shameless
-              Naruto fan, and occasional
-              needlepoint maker.
-            </h2>
             <Tab.Group
               onChange={(index) => {
                 setPictureIndex(index);
@@ -127,20 +124,20 @@ export default function Home() {
               animate={{
                 scale: 1,
                 transition: {
-                  duration: .75,
+                  duration: .25,
                 },
               }}
               whileHover={{
-                scale: 1.1,
+                scale: 1.05,
                 transition: {
-                  duration: .5,
+                  duration: .15,
                 },
               }}
             >
               <img
                 className={c(
                   (pictureIndex === 1 ?
-                    'rounded-full' : ''),
+                    'rounded-full' : ''),                  
                 )}
                 src={
                   pictureIndex === 0 ?

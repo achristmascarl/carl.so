@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { c } from '../utils';
 
-export default function MenuLink({ href, active, text }) {
+export default function RouterLink({ href, active, text }) {
   return (
     <Link href={href}>
       <a

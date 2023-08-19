@@ -1,7 +1,5 @@
 import Head from 'next/head';
-import Layout from '../../components/Layout';
-import { c } from '../../utils';
-import { redirects } from '../../../redirects';
+import { links } from '../links';
 
 const pageIcon = '👉';
 
@@ -13,7 +11,7 @@ function redirect(url) {
 
 export default function Redirect({ redirectData }) {
   return (
-    <Layout icon={pageIcon}>
+    <>
       <Head>
         <meta name="robots" content="noindex,nofollow" />
         <link
@@ -30,45 +28,25 @@ export default function Redirect({ redirectData }) {
         carl | redirecting to ${redirectData.name}...`
         } />
       </Head>
-      <div
-        className={c(
-          'max-w-7xl',
-          'md:min-h-screen',
-          'mx-auto',
-          'px-4',
-          'sm:px-6',
-          'lg:px-8',
-        )}
-      >
-        <div
-          className={c(
-            'p-5',
-            'mx-auto',
-            'max-w-2xl',
-            'flex',
-            'flex-col',
-            'justify-center',
-            'text-center',
-          )}
-        >
-          <h1>
-            redirecting to {redirectData.name}...
-          </h1>
-          {redirect(redirectData.url)}
-        </div>
+      <div>
+        {redirect(redirectData.url)}
       </div>
-    </Layout>
+    </>
   );
 }
 
 export async function getStaticPaths() {
   return {
-    paths: Object.keys(redirects).map(redirectId => {
-      return {
-        params: {
-          id: redirectId,
-        },
-      };
+    paths: Object.keys(links)
+            .filter(linkId => links[linkId].redirectActive === true)
+            .map(linkId => {
+      if (links[linkId].redirectActive) {
+        return {
+          params: {
+            id: linkId,
+          },
+        };
+      }
     }),
     fallback: false,
   }
@@ -77,7 +55,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   return {
     props: {
-      redirectData: { ...redirects[params.id] },
+      redirectData: { ...links[params.id] },
     }
   }
 }

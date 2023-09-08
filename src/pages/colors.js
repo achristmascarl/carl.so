@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import Layout from '../components/Layout';
-import { c, colors } from '../utils';
-import { motion } from 'framer-motion';
-import CopyIcon from '../components/CopyIcon';
+import Head from "next/head";
+import Layout from "../components/Layout";
+import { c, colors } from "../utils";
+import { motion } from "framer-motion";
+import CopyIcon from "../components/CopyIcon";
 
-const pageTitle = 'carl | colors';
-const pageIcon = '🎨';
+const pageTitle = "carl | colors";
+const pageIcon = "🎨";
 
 export default function Colors() {
   return (
@@ -14,10 +14,11 @@ export default function Colors() {
         <link
           rel="icon"
           href={
-            'data:image/svg+xml,' +
-            '<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>' +
+            "data:image/svg+xml," +
+            "<svg xmlns=%22http://www.w3.org/2000/svg%22 " +
+            "viewBox=%220 0 100 100%22>" +
             `<text y=%22.9em%22 font-size=%2290%22>${pageIcon}</text>` +
-            '</svg>'
+            "</svg>"
           }
         />
         <title>{pageTitle}</title>
@@ -38,41 +39,43 @@ export default function Colors() {
       >
         <div
           className={c(
-            'max-w-7xl',
-            'md:min-h-screen',
-            'mx-auto',
-            'px-4',
-            'sm:px-6',
-            'lg:px-8',
+            "max-w-7xl",
+            "md:min-h-screen",
+            "mx-auto",
+            "px-4",
+            "sm:px-6",
+            "lg:px-8",
           )}
         >
           <div
             className={c(
-              'p-5',
-              'mx-auto',
-              'max-w-2xl',
-              'flex',
-              'flex-col',
-              'justify-center',
-              'text-center',
+              "p-5",
+              "mx-auto",
+              "max-w-2xl",
+              "flex",
+              "flex-col",
+              "justify-center",
+              "text-center",
             )}
           >
-            <h1>
-              colors
-            </h1>
+            <h1>colors</h1>
             <h2>
-              Personal color palette generated and named by <a href='https://coolors.co/' target='_blank'>coolors.co</a>; this page is mainly a utility for myself lol
+              Personal color palette generated and named by{" "}
+              <a href="https://coolors.co/" target="_blank">
+                coolors.co
+              </a>
+              ; this page is mainly a utility for myself lol
             </h2>
           </div>
           <div
             className={c(
-              'p-5',
-              'mx-auto',
-              'max-w-2xl',
-              'flex',
-              'flex-col',
-              'justify-center',
-              'text-center',
+              "p-5",
+              "mx-auto",
+              "max-w-2xl",
+              "flex",
+              "flex-col",
+              "justify-center",
+              "text-center",
             )}
           >
             <div className="z-0 overflow-x-auto">
@@ -86,7 +89,7 @@ export default function Colors() {
                   </tr>
                 </thead>
                 <tbody>
-                  {colors.map(color => {
+                  {colors.map((color) => {
                     return (
                       <tr key={color.hex}>
                         <th className="w-fit bg-gray-50">
@@ -99,27 +102,19 @@ export default function Colors() {
                         </th>
                         <td className="bg-gray-50">{color.name}</td>
                         <td className="bg-gray-50">
-                          <div className='flex flex-row space-x-1 items-center'>
-                            <CopyIcon
-                              content={color.hex}
-                            />
-                            <div>
-                              {color.hex}
-                            </div>
+                          <div className="flex flex-row space-x-1 items-center">
+                            <CopyIcon content={color.hex} />
+                            <div>{color.hex}</div>
                           </div>
                         </td>
                         <td className="bg-gray-50">
-                          <div className='flex flex-row space-x-1 items-center'>
-                            <CopyIcon
-                              content={color.rgb}
-                            />
-                            <div>
-                              {color.rgb}
-                            </div>
+                          <div className="flex flex-row space-x-1 items-center">
+                            <CopyIcon content={color.rgb} />
+                            <div>{color.rgb}</div>
                           </div>
                         </td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </table>
@@ -128,5 +123,5 @@ export default function Colors() {
         </div>
       </motion.div>
     </Layout>
-  )
+  );
 }

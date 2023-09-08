@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
@@ -6,7 +6,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* <!-- Google tag (gtag.js) --> */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C5JKWZTHL"/>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-7C5JKWZTHL"
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -15,13 +18,14 @@ class MyDocument extends Document {
                 gtag('js', new Date());
 
                 gtag('config', 'G-7C5JKWZTHL');
-              `
-          }}/>
+              `,
+            }}
+          />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href={
-                'https://fonts.googleapis.com/css2?family=PT+Serif:wght@700' +
-                '&family=Open+Sans:wght@400;700&display=swap'
+              "https://fonts.googleapis.com/css2?family=PT+Serif:wght@700" +
+              "&family=Open+Sans:wght@400;700&display=swap"
             }
             rel="stylesheet"
           />
@@ -31,8 +35,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

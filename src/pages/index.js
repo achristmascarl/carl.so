@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Layout from "../components/Layout";
 import { c } from "../utils";
 import { Tab } from "@headlessui/react";
@@ -124,16 +125,24 @@ export default function Home() {
                 },
               }}
             >
-              <img
-                className={c(pictureIndex === 1 ? "rounded-full" : "")}
-                src={
-                  pictureIndex === 0
-                    ? "/carl-framed-floral-compressed.png"
-                    : pictureIndex === 1
-                    ? "/carl-outlined-bg-min.jpg"
-                    : "/carl-framed-floral-compressed.png"
-                }
-              />
+              <div className="w-full grow">
+                <Image
+                  className={c(
+                    "object-contain",
+                    pictureIndex === 1 ? "rounded-full" : "",
+                  )}
+                  src={
+                    pictureIndex === 0
+                      ? "/carl-framed-floral-compressed.png"
+                      : pictureIndex === 1
+                      ? "/carl-outlined-bg-min.jpg"
+                      : "/carl-framed-floral-compressed.png"
+                  }
+                  alt="carl"
+                  width={500}
+                  height={500}
+                />
+              </div>
             </motion.div>
           </div>
         </div>

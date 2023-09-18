@@ -30,7 +30,15 @@ export default function Layout({ children, home, colors, icon }) {
         <meta name="description" content="a personal website" />
         <meta property="og:image" content="/carl-framed-floral-social.png" />
       </Head>
-      <div className={c("flex", "flex-col", "h-screen", "justify-between")}>
+      <div
+        className={c(
+          "flex",
+          "flex-col",
+          "h-screen",
+          "justify-between",
+          "overflow-x-hidden",
+        )}
+      >
         <nav
           className={c(
             "z-50",

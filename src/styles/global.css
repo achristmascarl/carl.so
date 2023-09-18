@@ -19,7 +19,7 @@
     @apply text-xl font-bold pb-2;
   }
   h5 {
-    @apply text-lg text-asparagus uppercase pb-1;
+    @apply text-xl text-asparagus uppercase pb-1;
   }
   p {
     @apply text-base pb-1 text-left;

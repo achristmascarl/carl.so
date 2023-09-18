@@ -5,6 +5,13 @@ import { c } from "../utils";
 import { Tab } from "@headlessui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import carlFloral from "../../public/carl-framed-floral-compressed.png";
+import carlHair from "../../public/carl-outlined-bg-min.jpg";
+import carlDrawn from "../../public/carl-dk-draw-min.jpg";
+import gatherlyLegacy from "../../public/gatherly-legacy.jpg";
+import gatherly2021 from "../../public/gatherly-2021-min.jpg";
+import gatherly2022 from "../../public/gatherly-2022-min.jpg";
+import gatherlyPresent from "../../public/gatherly-present-min.jpg";
 
 const pageTitle = "carl | home";
 const pageIcon = "🏠";
@@ -135,10 +142,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain")}
-                src={"/carl-framed-floral-compressed.png"}
+                src={carlFloral}
                 alt="bald floral carl"
-                width={500}
-                height={500}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500")}>no hair</p>
             </div>
@@ -154,10 +160,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain", "rounded-full")}
-                src={"/carl-outlined-bg-min.jpg"}
+                src={carlHair}
                 alt="carl with hair"
-                width={500}
-                height={500}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
             </div>
@@ -173,10 +178,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain", "rounded-2xl")}
-                src={"/carl-dk-draw-min.jpg"}
+                src={carlDrawn}
                 alt="carl with hair"
-                width={500}
-                height={500}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 drawn by{" "}
@@ -230,16 +234,15 @@ export default function Home() {
                   )}
                   src={
                     pictureIndex === 0
-                      ? "/carl-framed-floral-compressed.png"
+                      ? carlFloral
                       : pictureIndex === 1
-                      ? "/carl-outlined-bg-min.jpg"
+                      ? carlHair
                       : pictureIndex === 2
-                      ? "/carl-dk-draw-min.jpg"
-                      : "/carl-framed-floral-compressed.png"
+                      ? carlDrawn
+                      : carlFloral
                   }
                   alt="carl"
-                  width={500}
-                  height={500}
+                  placeholder="blur"
                 />
                 {pictureIndex === 2 && (
                   <p className={c("text-lg", "text-gray-500", "pt-2")}>
@@ -294,10 +297,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={"/gatherly-legacy.jpg"}
+                src={gatherlyLegacy}
                 alt="gatherly legacy"
-                width={1000}
-                height={502}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 How it started
@@ -315,10 +317,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={"/gatherly-2021-min.jpg"}
+                src={gatherly2021}
                 alt="gatherly in 2021"
-                width={1000}
-                height={625}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 Gatherly in 2021
@@ -336,10 +337,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={"/gatherly-2022-min.jpg"}
+                src={gatherly2022}
                 alt="gatherly in 2022"
-                width={1000}
-                height={625}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 Gatherly in 2022
@@ -357,10 +357,9 @@ export default function Home() {
             >
               <Image
                 className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={"/gatherly-present-min.jpg"}
+                src={gatherlyPresent}
                 alt="present day gatherly"
-                width={1000}
-                height={717}
+                placeholder="blur"
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 How it&apos;s going
@@ -464,18 +463,17 @@ export default function Home() {
                   className={c("object-contain", "shadow-lg", "rounded-lg")}
                   src={
                     gatherlyIndex === 0
-                      ? "/gatherly-legacy.jpg"
+                      ? gatherlyLegacy
                       : gatherlyIndex === 1
-                      ? "/gatherly-2021-min.jpg"
+                      ? gatherly2021
                       : gatherlyIndex === 2
-                      ? "/gatherly-2022-min.jpg"
+                      ? gatherly2022
                       : gatherlyIndex === 3
-                      ? "/gatherly-present-min.jpg"
-                      : "/gatherly-present-min.jpg"
+                      ? gatherlyPresent
+                      : gatherlyPresent
                   }
-                  alt="carl"
-                  width={1000}
-                  height={750}
+                  alt="gatherly"
+                  placeholder="blur"
                 />
               </div>
             </motion.div>
@@ -539,6 +537,7 @@ export default function Home() {
               alt="bald floral carl"
               width={500}
               height={500}
+              placeholder="blur"
             />
             <p className={c("text-lg", "text-gray-500")}>no hair</p>
           </div>
@@ -558,6 +557,7 @@ export default function Home() {
               alt="carl with hair"
               width={500}
               height={500}
+              placeholder="blur"
             />
             <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
           </div>
@@ -577,6 +577,7 @@ export default function Home() {
               alt="carl drawn by daisy kong"
               width={500}
               height={500}
+              placeholder="blur"
             />
             <p className={c("text-lg", "text-gray-500", "pt-2")}>
               drawn by @daisykong__

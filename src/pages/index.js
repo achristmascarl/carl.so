@@ -145,6 +145,7 @@ export default function Home() {
                 src={carlFloral}
                 alt="bald floral carl"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500")}>no hair</p>
             </div>
@@ -163,6 +164,7 @@ export default function Home() {
                 src={carlHair}
                 alt="carl with hair"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
             </div>
@@ -181,6 +183,7 @@ export default function Home() {
                 src={carlDrawn}
                 alt="carl with hair"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 drawn by{" "}
@@ -243,6 +246,7 @@ export default function Home() {
                   }
                   alt="carl"
                   placeholder="blur"
+                  priority={true}
                 />
                 {pictureIndex === 2 && (
                   <p className={c("text-lg", "text-gray-500", "pt-2")}>
@@ -300,6 +304,7 @@ export default function Home() {
                 src={gatherlyLegacy}
                 alt="gatherly legacy"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 How it started
@@ -320,6 +325,7 @@ export default function Home() {
                 src={gatherly2021}
                 alt="gatherly in 2021"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 Gatherly in 2021
@@ -340,6 +346,7 @@ export default function Home() {
                 src={gatherly2022}
                 alt="gatherly in 2022"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 Gatherly in 2022
@@ -360,6 +367,7 @@ export default function Home() {
                 src={gatherlyPresent}
                 alt="present day gatherly"
                 placeholder="blur"
+                priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 How it&apos;s going
@@ -474,6 +482,7 @@ export default function Home() {
                   }
                   alt="gatherly"
                   placeholder="blur"
+                  priority={true}
                 />
               </div>
             </motion.div>
@@ -538,6 +547,7 @@ export default function Home() {
               width={500}
               height={500}
               placeholder="blur"
+              priority={true}
             />
             <p className={c("text-lg", "text-gray-500")}>no hair</p>
           </div>
@@ -558,6 +568,7 @@ export default function Home() {
               width={500}
               height={500}
               placeholder="blur"
+              priority={true}
             />
             <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
           </div>
@@ -578,6 +589,7 @@ export default function Home() {
               width={500}
               height={500}
               placeholder="blur"
+              priority={true}
             />
             <p className={c("text-lg", "text-gray-500", "pt-2")}>
               drawn by @daisykong__

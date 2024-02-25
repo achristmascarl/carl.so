@@ -220,14 +220,14 @@ export default function Layout({ children, home, colors, icon }) {
               )}
             >
               <div className={c("flex", "items-center")}>
-                Built with 🍠 by Carl ©️ {new Date().getFullYear()}
+                built by a 🐸 ©️ {new Date().getFullYear()}
               </div>
               <div className={c("flex", "items-center")}>
                 <a
                   href="https://github.com/achristmascarl/carl.so"
                   target="_blank"
                 >
-                  GitHub repo
+                  github repo
                 </a>
               </div>
             </div>

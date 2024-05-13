@@ -232,17 +232,17 @@ export default function Home() {
                     pictureIndex === 1
                       ? "rounded-full"
                       : pictureIndex === 2
-                      ? "rounded-2xl"
-                      : "",
+                        ? "rounded-2xl"
+                        : "",
                   )}
                   src={
                     pictureIndex === 0
                       ? carlFloral
                       : pictureIndex === 1
-                      ? carlHair
-                      : pictureIndex === 2
-                      ? carlDrawn
-                      : carlFloral
+                        ? carlHair
+                        : pictureIndex === 2
+                          ? carlDrawn
+                          : carlFloral
                   }
                   alt="carl"
                   placeholder="blur"
@@ -467,12 +467,12 @@ export default function Home() {
                     gatherlyIndex === 0
                       ? gatherlyLegacy
                       : gatherlyIndex === 1
-                      ? gatherly2021
-                      : gatherlyIndex === 2
-                      ? gatherly2022
-                      : gatherlyIndex === 3
-                      ? gatherlyPresent
-                      : gatherlyPresent
+                        ? gatherly2021
+                        : gatherlyIndex === 2
+                          ? gatherly2022
+                          : gatherlyIndex === 3
+                            ? gatherlyPresent
+                            : gatherlyPresent
                   }
                   alt="gatherly"
                   placeholder="blur"

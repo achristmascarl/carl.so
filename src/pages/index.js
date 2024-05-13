@@ -365,12 +365,12 @@ export default function Home() {
               <Image
                 className={c("object-contain", "rounded-lg", "shadow-lg")}
                 src={gatherlyPresent}
-                alt="present day gatherly"
+                alt="gatherly in 2023"
                 placeholder="blur"
                 priority={true}
               />
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
-                How it&apos;s going
+                Gatherly in 2023
               </p>
             </div>
           </div>
@@ -394,16 +394,10 @@ export default function Home() {
               <h5>What I&apos;m up to</h5>
               <p className={c("pb-3", "text-center")}>
                 I founded Gatherly (
-                <a
-                  href={
-                    "https://gatherly.io/?utm_source=carl-so&" +
-                    "utm_medium=text-link&utm_campaign=personal-websites"
-                  }
-                  target="_blank"
-                >
+                <a href={"https://gatherly.io/"} target="_blank">
                   gatherly.io
                 </a>
-                ) in 2020 along with some friends.
+                ) in 2020 with some friends. It was acquired in 2024.
               </p>
               <Tab.Group
                 onChange={(index) => {
@@ -432,7 +426,7 @@ export default function Home() {
                     2022
                   </Tab>
                   <Tab className={({ selected }) => tabStyle(selected)}>
-                    now
+                    2023
                   </Tab>
                 </Tab.List>
               </Tab.Group>

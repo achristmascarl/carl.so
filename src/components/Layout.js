@@ -81,7 +81,8 @@ export default function Layout({ children, home, colors, icon }) {
                     />
                     <a
                       href={
-                        "https://github.com/achristmascarl/rainfrog/?utm_source=personal_website" +
+                        "https://github.com/achristmascarl/rainfrog" +
+                        "?utm_source=personal_website" +
                         "&utm_medium=referral&utm_campaign=carl-so"
                       }
                       target="_blank"
@@ -205,7 +206,8 @@ export default function Layout({ children, home, colors, icon }) {
               <RouterLink href={"/colors"} active={colors} text={"colors"} />
               <a
                 href={
-                  "https://github.com/achristmascarl/rainfrog?utm_source=personal_website" +
+                  "https://github.com/achristmascarl/rainfrog" +
+                  "?utm_source=personal_website" +
                   "&utm_medium=referral&utm_campaign=carl-so"
                 }
                 target="_blank"

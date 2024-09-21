@@ -3,7 +3,6 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import { c } from "../utils";
 import { Tab } from "@headlessui/react";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import carlFloral from "../../public/carl-framed-floral-compressed.png";
 import carlHair from "../../public/carl-outlined-bg-min.jpg";
@@ -46,145 +45,173 @@ export default function Home() {
         <title>{pageTitle}</title>
         <meta name="og:title" content={pageTitle} />
       </Head>
-      <motion.div
-        initial="initial"
-        animate="enter"
-        variants={{
-          initial: {
-            opacity: 0,
-          },
-          enter: {
-            opacity: 1,
-            duration: 0.5,
-          },
-        }}
+      <div
+        className={c(
+          "grid",
+          "grid-cols-1",
+          "md:grid-cols-2",
+          "max-w-7xl",
+          "mx-auto",
+          "px-4",
+          "sm:px-6",
+          "lg:px-8",
+          "md:min-h-screen",
+        )}
       >
-        <div
-          className={c(
-            "grid",
-            "grid-cols-1",
-            "md:grid-cols-2",
-            "max-w-7xl",
-            "mx-auto",
-            "px-4",
-            "sm:px-6",
-            "lg:px-8",
-            "md:min-h-screen",
-          )}
-        >
-          <div className={c("md:justify-items-center", "md:relative")}>
-            <div
-              className={c(
-                "p-5",
-                "mx-auto",
-                "w-full",
-                "max-w-sm",
-                "flex",
-                "flex-col",
-                "justify-center",
-                "text-center",
-                "md:sticky",
-                "md:top-0",
-                "md:mt-20",
-                "md:pt-20",
-              )}
-            >
-              <h1>hi, i&apos;m carl</h1>
-              <Tab.Group
-                onChange={(index) => {
-                  setPictureIndex(index);
-                }}
-              >
-                <Tab.List
-                  className={c(
-                    "flex",
-                    "p-1",
-                    "bg-gray-50",
-                    "rounded-md",
-                    "mx-3",
-                    "shadow-inner",
-                    "md:hidden",
-                  )}
-                >
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    no hair
-                  </Tab>
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    hair
-                  </Tab>
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    drawn
-                  </Tab>
-                </Tab.List>
-              </Tab.Group>
-            </div>
-          </div>
+        <div className={c("md:justify-items-center", "md:relative")}>
           <div
             className={c(
               "p-5",
               "mx-auto",
-              "max-w-5xl",
-              "md:flex",
+              "w-full",
+              "max-w-sm",
+              "flex",
               "flex-col",
               "justify-center",
-              "hidden",
+              "text-center",
+              "md:sticky",
+              "md:top-0",
+              "md:mt-20",
+              "md:pt-20",
             )}
           >
-            <div
-              className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
-              )}
+            <h1>hi, i&apos;m carl</h1>
+            <Tab.Group
+              onChange={(index) => {
+                setPictureIndex(index);
+              }}
             >
-              <Image
-                className={c("object-contain")}
-                src={carlFloral}
-                alt="bald floral carl"
-                placeholder="blur"
-                priority={true}
-              />
-              <p className={c("text-lg", "text-gray-500")}>no hair</p>
-            </div>
-            <div
+              <Tab.List
+                className={c(
+                  "flex",
+                  "p-1",
+                  "bg-gray-50",
+                  "rounded-md",
+                  "mx-3",
+                  "shadow-inner",
+                  "md:hidden",
+                )}
+              >
+                <Tab className={({ selected }) => tabStyle(selected)}>
+                  no hair
+                </Tab>
+                <Tab className={({ selected }) => tabStyle(selected)}>hair</Tab>
+                <Tab className={({ selected }) => tabStyle(selected)}>
+                  drawn
+                </Tab>
+              </Tab.List>
+            </Tab.Group>
+          </div>
+        </div>
+        <div
+          className={c(
+            "p-5",
+            "mx-auto",
+            "max-w-5xl",
+            "md:flex",
+            "flex-col",
+            "justify-center",
+            "hidden",
+          )}
+        >
+          <div
+            className={c(
+              "w-full",
+              "grow",
+              "flex",
+              "flex-col",
+              "items-center",
+              "pb-10",
+            )}
+          >
+            <Image
+              className={c("object-contain")}
+              src={carlFloral}
+              alt="bald floral carl"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500")}>no hair</p>
+          </div>
+          <div
+            className={c(
+              "w-full",
+              "grow",
+              "flex",
+              "flex-col",
+              "items-center",
+              "pb-10",
+            )}
+          >
+            <Image
+              className={c("object-contain", "rounded-full")}
+              src={carlHair}
+              alt="carl with hair"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
+          </div>
+          <div
+            className={c(
+              "w-full",
+              "grow",
+              "flex",
+              "flex-col",
+              "items-center",
+              "pb-10",
+            )}
+          >
+            <Image
+              className={c("object-contain", "rounded-2xl")}
+              src={carlDrawn}
+              alt="carl with hair"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500", "pt-2")}>
+              drawn by{" "}
+              <a
+                href="https://www.instagram.com/daisykong__/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                @daisykong__
+              </a>
+            </p>
+          </div>
+        </div>
+        <div
+          className={c(
+            "p-5",
+            "mx-auto",
+            "max-w-5xl",
+            "flex",
+            "flex-col",
+            "justify-center",
+            "md:hidden",
+          )}
+        >
+          <div className="w-full grow flex flex-col items-center">
+            <Image
               className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
+                "object-contain",
+                pictureIndex === 1
+                  ? "rounded-full"
+                  : pictureIndex === 2
+                    ? "rounded-2xl"
+                    : "",
               )}
-            >
-              <Image
-                className={c("object-contain", "rounded-full")}
-                src={carlHair}
-                alt="carl with hair"
-                placeholder="blur"
-                priority={true}
-              />
-              <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
-            </div>
-            <div
-              className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
-              )}
-            >
-              <Image
-                className={c("object-contain", "rounded-2xl")}
-                src={carlDrawn}
-                alt="carl with hair"
-                placeholder="blur"
-                priority={true}
-              />
+              src={
+                pictureIndex === 0
+                  ? carlFloral
+                  : pictureIndex === 1
+                    ? carlHair
+                    : pictureIndex === 2
+                      ? carlDrawn
+                      : carlFloral
+              }
+              alt="carl"
+              placeholder="blur"
+            />
+            {pictureIndex === 2 && (
               <p className={c("text-lg", "text-gray-500", "pt-2")}>
                 drawn by{" "}
                 <a
@@ -195,295 +222,201 @@ export default function Home() {
                   @daisykong__
                 </a>
               </p>
-            </div>
-          </div>
-          <div
-            className={c(
-              "p-5",
-              "mx-auto",
-              "max-w-5xl",
-              "flex",
-              "flex-col",
-              "justify-center",
-              "md:hidden",
             )}
-          >
-            <motion.div
-              initial={{
-                scale: 0.5,
-              }}
-              animate={{
-                scale: 1,
-                transition: {
-                  duration: 0.25,
-                },
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: {
-                  duration: 0.15,
-                },
-              }}
-            >
-              <div className="w-full grow flex flex-col items-center">
-                <Image
-                  className={c(
-                    "object-contain",
-                    pictureIndex === 1
-                      ? "rounded-full"
-                      : pictureIndex === 2
-                        ? "rounded-2xl"
-                        : "",
-                  )}
-                  src={
-                    pictureIndex === 0
-                      ? carlFloral
-                      : pictureIndex === 1
-                        ? carlHair
-                        : pictureIndex === 2
-                          ? carlDrawn
-                          : carlFloral
-                  }
-                  alt="carl"
-                  placeholder="blur"
-                  priority={true}
-                />
-                {pictureIndex === 2 && (
-                  <p className={c("text-lg", "text-gray-500", "pt-2")}>
-                    drawn by{" "}
-                    <a
-                      href="https://www.instagram.com/daisykong__/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      @daisykong__
-                    </a>
-                  </p>
-                )}
-              </div>
-            </motion.div>
           </div>
         </div>
+      </div>
+      <div
+        className={c(
+          "grid",
+          "grid-cols-1",
+          "md:grid-cols-3",
+          "max-w-7xl",
+          "mx-auto",
+          "px-4",
+          "sm:px-6",
+          "lg:px-8",
+          "md:min-h-screen",
+        )}
+      >
         <div
           className={c(
-            "grid",
-            "grid-cols-1",
-            "md:grid-cols-3",
-            "max-w-7xl",
+            "col-span-2",
+            "p-5",
             "mx-auto",
-            "px-4",
-            "sm:px-6",
-            "lg:px-8",
-            "md:min-h-screen",
+            "max-w-7xl",
+            "md:flex",
+            "flex-col",
+            "justify-center",
+            "hidden",
           )}
         >
           <div
             className={c(
-              "col-span-2",
-              "p-5",
-              "mx-auto",
-              "max-w-7xl",
-              "md:flex",
+              "w-full",
+              "grow",
+              "flex",
               "flex-col",
-              "justify-center",
-              "hidden",
+              "items-center",
+              "pb-10",
             )}
           >
-            <div
-              className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
-              )}
-            >
-              <Image
-                className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={gatherlyLegacy}
-                alt="gatherly legacy"
-                placeholder="blur"
-                priority={true}
-              />
-              <p className={c("text-lg", "text-gray-500", "pt-2")}>
-                How it started
-              </p>
-            </div>
-            <div
-              className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
-              )}
-            >
-              <Image
-                className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={gatherly2021}
-                alt="gatherly in 2021"
-                placeholder="blur"
-                priority={true}
-              />
-              <p className={c("text-lg", "text-gray-500", "pt-2")}>
-                Gatherly in 2021
-              </p>
-            </div>
-            <div
-              className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
-              )}
-            >
-              <Image
-                className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={gatherly2022}
-                alt="gatherly in 2022"
-                placeholder="blur"
-                priority={true}
-              />
-              <p className={c("text-lg", "text-gray-500", "pt-2")}>
-                Gatherly in 2022
-              </p>
-            </div>
-            <div
-              className={c(
-                "w-full",
-                "grow",
-                "flex",
-                "flex-col",
-                "items-center",
-                "pb-10",
-              )}
-            >
-              <Image
-                className={c("object-contain", "rounded-lg", "shadow-lg")}
-                src={gatherlyPresent}
-                alt="gatherly in 2023"
-                placeholder="blur"
-                priority={true}
-              />
-              <p className={c("text-lg", "text-gray-500", "pt-2")}>
-                Gatherly in 2023
-              </p>
-            </div>
+            <Image
+              className={c("object-contain", "rounded-lg", "shadow-lg")}
+              src={gatherlyLegacy}
+              alt="gatherly legacy"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500", "pt-2")}>
+              How it started
+            </p>
           </div>
-          <div className={c("md:justify-items-center", "md:relative")}>
-            <div
-              className={c(
-                "p-5",
-                "mx-auto",
-                "w-full",
-                "max-w-sm",
-                "flex",
-                "flex-col",
-                "justify-center",
-                "text-center",
-                "md:sticky",
-                "md:top-0",
-                "md:mt-10",
-                "md:pt-20",
-              )}
-            >
-              <h5>What I&apos;m up to</h5>
-              <p className={c("pb-3", "text-center")}>
-                I founded Gatherly (
-                <a href={"https://gatherly.io/"} target="_blank">
-                  gatherly.io
-                </a>
-                ) in 2020 with some friends. It was acquired in 2024.
-              </p>
-              <Tab.Group
-                onChange={(index) => {
-                  setGatherlyIndex(index);
-                }}
-                defaultIndex={3}
-              >
-                <Tab.List
-                  className={c(
-                    "flex",
-                    "p-1",
-                    "bg-gray-50",
-                    "rounded-md",
-                    "mx-3",
-                    "shadow-inner",
-                    "md:hidden",
-                  )}
-                >
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    legacy
-                  </Tab>
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    2021
-                  </Tab>
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    2022
-                  </Tab>
-                  <Tab className={({ selected }) => tabStyle(selected)}>
-                    2023
-                  </Tab>
-                </Tab.List>
-              </Tab.Group>
-            </div>
+          <div
+            className={c(
+              "w-full",
+              "grow",
+              "flex",
+              "flex-col",
+              "items-center",
+              "pb-10",
+            )}
+          >
+            <Image
+              className={c("object-contain", "rounded-lg", "shadow-lg")}
+              src={gatherly2021}
+              alt="gatherly in 2021"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500", "pt-2")}>
+              Gatherly in 2021
+            </p>
           </div>
+          <div
+            className={c(
+              "w-full",
+              "grow",
+              "flex",
+              "flex-col",
+              "items-center",
+              "pb-10",
+            )}
+          >
+            <Image
+              className={c("object-contain", "rounded-lg", "shadow-lg")}
+              src={gatherly2022}
+              alt="gatherly in 2022"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500", "pt-2")}>
+              Gatherly in 2022
+            </p>
+          </div>
+          <div
+            className={c(
+              "w-full",
+              "grow",
+              "flex",
+              "flex-col",
+              "items-center",
+              "pb-10",
+            )}
+          >
+            <Image
+              className={c("object-contain", "rounded-lg", "shadow-lg")}
+              src={gatherlyPresent}
+              alt="gatherly in 2023"
+              placeholder="blur"
+            />
+            <p className={c("text-lg", "text-gray-500", "pt-2")}>
+              Gatherly in 2023
+            </p>
+          </div>
+        </div>
+        <div className={c("md:justify-items-center", "md:relative")}>
           <div
             className={c(
               "p-5",
               "mx-auto",
-              "max-w-5xl",
+              "w-full",
+              "max-w-sm",
               "flex",
               "flex-col",
               "justify-center",
-              "md:hidden",
+              "text-center",
+              "md:sticky",
+              "md:top-0",
+              "md:mt-10",
+              "md:pt-20",
             )}
           >
-            <motion.div
-              initial={{
-                scale: 0.5,
+            <h5>What I&apos;m up to</h5>
+            <p className={c("pb-3", "text-center")}>
+              I founded Gatherly (
+              <a href={"https://gatherly.io/"} target="_blank">
+                gatherly.io
+              </a>
+              ) in 2020 with some friends. It was acquired in 2024.
+            </p>
+            <Tab.Group
+              onChange={(index) => {
+                setGatherlyIndex(index);
               }}
-              animate={{
-                scale: 1,
-                transition: {
-                  duration: 0.25,
-                },
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: {
-                  duration: 0.15,
-                },
-              }}
+              defaultIndex={3}
             >
-              <div className="w-full grow">
-                <Image
-                  className={c("object-contain", "shadow-lg", "rounded-lg")}
-                  src={
-                    gatherlyIndex === 0
-                      ? gatherlyLegacy
-                      : gatherlyIndex === 1
-                        ? gatherly2021
-                        : gatherlyIndex === 2
-                          ? gatherly2022
-                          : gatherlyIndex === 3
-                            ? gatherlyPresent
-                            : gatherlyPresent
-                  }
-                  alt="gatherly"
-                  placeholder="blur"
-                  priority={true}
-                />
-              </div>
-            </motion.div>
+              <Tab.List
+                className={c(
+                  "flex",
+                  "p-1",
+                  "bg-gray-50",
+                  "rounded-md",
+                  "mx-3",
+                  "shadow-inner",
+                  "md:hidden",
+                )}
+              >
+                <Tab className={({ selected }) => tabStyle(selected)}>
+                  legacy
+                </Tab>
+                <Tab className={({ selected }) => tabStyle(selected)}>2021</Tab>
+                <Tab className={({ selected }) => tabStyle(selected)}>2022</Tab>
+                <Tab className={({ selected }) => tabStyle(selected)}>2023</Tab>
+              </Tab.List>
+            </Tab.Group>
           </div>
         </div>
-        {/* POC of horiztonal scrolling, not working yet tho: */}
-        {/* <div
+        <div
+          className={c(
+            "p-5",
+            "mx-auto",
+            "max-w-5xl",
+            "flex",
+            "flex-col",
+            "justify-center",
+            "md:hidden",
+          )}
+        >
+          <div className="w-full grow">
+            <Image
+              className={c("object-contain", "shadow-lg", "rounded-lg")}
+              src={
+                gatherlyIndex === 0
+                  ? gatherlyLegacy
+                  : gatherlyIndex === 1
+                    ? gatherly2021
+                    : gatherlyIndex === 2
+                      ? gatherly2022
+                      : gatherlyIndex === 3
+                        ? gatherlyPresent
+                        : gatherlyPresent
+              }
+              alt="gatherly"
+              placeholder="blur"
+            />
+          </div>
+        </div>
+      </div>
+      {/* POC of horiztonal scrolling, not working yet tho: */}
+      {/* <div
           className={c("grid", "grid-cols-1", "max-w-7xl", "mx-auto", "px-5")}
         >
           <div
@@ -541,7 +474,6 @@ export default function Home() {
               width={500}
               height={500}
               placeholder="blur"
-              priority={true}
             />
             <p className={c("text-lg", "text-gray-500")}>no hair</p>
           </div>
@@ -562,7 +494,6 @@ export default function Home() {
               width={500}
               height={500}
               placeholder="blur"
-              priority={true}
             />
             <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
           </div>
@@ -583,14 +514,12 @@ export default function Home() {
               width={500}
               height={500}
               placeholder="blur"
-              priority={true}
             />
             <p className={c("text-lg", "text-gray-500", "pt-2")}>
               drawn by @daisykong__
             </p>
           </div>
         </div> */}
-      </motion.div>
     </Layout>
   );
 }

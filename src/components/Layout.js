@@ -105,31 +105,6 @@ export default function Layout({ children, home, colors, icon }) {
                     >
                       🐸
                     </a>
-                    <a
-                      href={
-                        "https://charades.ai/?utm_source=personal_website" +
-                        "&utm_medium=referral&utm_campaign=carl-so"
-                      }
-                      target="_blank"
-                      rel="noreferrer"
-                      className={c(
-                        "hover:bg-gray-50",
-                        "text-black",
-                        "px-3",
-                        "py-2",
-                        "rounded-md",
-                        "text-sm",
-                        "font-medium",
-                        "focus:outline-none",
-                        "focus:ring-2",
-                        "focus:ring-offset-2",
-                        "focus:ring-offset-gray-50",
-                        "focus:ring-white",
-                      )}
-                      title="charades.ai"
-                    >
-                      🎭
-                    </a>
                     {createLinkIcons()}
                   </div>
                 </div>
@@ -230,31 +205,6 @@ export default function Layout({ children, home, colors, icon }) {
               >
                 🐸
               </a>
-              <a
-                href={
-                  "https://charades.ai/?utm_source=personal_website" +
-                  "&utm_medium=referral&utm_campaign=carl-so"
-                }
-                target="_blank"
-                rel="noreferrer"
-                className={c(
-                  "hover:bg-gray-50",
-                  "text-black",
-                  "px-3",
-                  "py-2",
-                  "rounded-md",
-                  "text-sm",
-                  "font-medium",
-                  "focus:outline-none",
-                  "focus:ring-2",
-                  "focus:ring-offset-2",
-                  "focus:ring-offset-gray-50",
-                  "focus:ring-white",
-                )}
-                title="charades.ai"
-              >
-                🎭
-              </a>
               {createLinkIcons()}
             </div>
           </div>
@@ -275,14 +225,6 @@ export default function Layout({ children, home, colors, icon }) {
             >
               <div className={c("flex", "items-center")}>
                 built by a 🐸 ©️ {new Date().getFullYear()}
-              </div>
-              <div className={c("flex", "items-center")}>
-                <a
-                  href="https://github.com/achristmascarl/carl.so"
-                  target="_blank"
-                >
-                  github repo
-                </a>
               </div>
             </div>
           </div>

@@ -64,7 +64,7 @@ export default function Colors() {
               <a href="https://coolors.co/" target="_blank">
                 coolors.co
               </a>
-              ; this page is mainly a utility for myself lol
+              ; this page is mainly a utility for myself
             </h2>
           </div>
           <div

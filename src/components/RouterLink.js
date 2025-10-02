@@ -3,7 +3,7 @@ import { c } from "../utils";
 
 export default function RouterLink({ href, active, text }) {
   return (
-    <Link legacyBehavior href={href}>
+    <Link href={href}>
       <a
         className={c(
           active ? "bg-gray-50 font-bold" : "hover:bg-gray-50",

@@ -5,7 +5,6 @@ import { c } from "../utils";
 import { Tab } from "@headlessui/react";
 import { useState } from "react";
 import carlFloral from "../../public/carl-framed-floral-compressed.png";
-import carlHair from "../../public/carl-outlined-bg-min.jpg";
 import carlDrawn from "../../public/carl-dk-draw-min.jpg";
 import gatherlyLegacy from "../../public/gatherly-legacy.jpg";
 import gatherly2021 from "../../public/gatherly-2021-min.jpg";
@@ -95,7 +94,6 @@ export default function Home() {
                 <Tab className={({ selected }) => tabStyle(selected)}>
                   no hair
                 </Tab>
-                <Tab className={({ selected }) => tabStyle(selected)}>hair</Tab>
                 <Tab className={({ selected }) => tabStyle(selected)}>
                   drawn
                 </Tab>
@@ -143,24 +141,6 @@ export default function Home() {
             )}
           >
             <Image
-              className={c("object-contain", "rounded-full")}
-              src={carlHair}
-              alt="carl with hair"
-              placeholder="blur"
-            />
-            <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
-          </div>
-          <div
-            className={c(
-              "w-full",
-              "grow",
-              "flex",
-              "flex-col",
-              "items-center",
-              "pb-10",
-            )}
-          >
-            <Image
               className={c("object-contain", "rounded-2xl")}
               src={carlDrawn}
               alt="carl with hair"
@@ -193,20 +173,14 @@ export default function Home() {
             <Image
               className={c(
                 "object-contain",
-                pictureIndex === 1
-                  ? "rounded-full"
-                  : pictureIndex === 2
-                    ? "rounded-2xl"
-                    : "",
+                pictureIndex === 1 ? "rounded-2xl" : "",
               )}
               src={
                 pictureIndex === 0
                   ? carlFloral
                   : pictureIndex === 1
-                    ? carlHair
-                    : pictureIndex === 2
-                      ? carlDrawn
-                      : carlFloral
+                    ? carlDrawn
+                    : carlFloral
               }
               alt="carl"
               placeholder="blur"
@@ -415,111 +389,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* POC of horiztonal scrolling, not working yet tho: */}
-      {/* <div
-          className={c("grid", "grid-cols-1", "max-w-7xl", "mx-auto", "px-5")}
-        >
-          <div
-            className={c(
-              "md:justify-items-center",
-              "md:relative",
-              "text-center",
-            )}
-          >
-            <h5>What I&apos;m up to</h5>
-            <p className={c("pb-3", "text-center")}>
-              I founded Gatherly (
-              <a
-                href={
-                  "https://gatherly.io/?utm_source=carl-so&" +
-                  "utm_medium=text-link&utm_campaign=personal-websites"
-                }
-                target="_blank"
-              >
-                gatherly.io
-              </a>
-              ) along with some friends in 2020.
-            </p>
-          </div>
-        </div>
-        <div
-          className={c(
-            "justify-evenly",
-            "overflow-y-auto",
-            "overflow-x-hidden",
-            "-rotate-90",
-            "origin-top-left",
-            "translate-y-[500px]",
-            "w-[500px]",
-            "md:translate-y-[700px]",
-            "md:w-[700px]",
-            "h-[100vw]",
-            "touch-pan-y",
-          )}
-        >
-          <div
-            className={c(
-              "w-full",
-              "grow",
-              "flex",
-              "flex-col",
-              "items-center",
-              "rotate-90",
-            )}
-          >
-            <Image
-              className={c("object-contain", "shadow-md")}
-              src={"/carl-framed-floral-compressed.png"}
-              alt="bald floral carl"
-              width={500}
-              height={500}
-              placeholder="blur"
-            />
-            <p className={c("text-lg", "text-gray-500")}>no hair</p>
-          </div>
-          <div
-            className={c(
-              "w-full",
-              "grow",
-              "flex",
-              "flex-col",
-              "items-center",
-              "rotate-90",
-            )}
-          >
-            <Image
-              className={c("object-contain", "shadow-md", "rounded-full")}
-              src={"/carl-outlined-bg-min.jpg"}
-              alt="carl with hair"
-              width={500}
-              height={500}
-              placeholder="blur"
-            />
-            <p className={c("text-lg", "text-gray-500", "pt-2")}>hair</p>
-          </div>
-          <div
-            className={c(
-              "w-full",
-              "grow",
-              "flex",
-              "flex-col",
-              "items-center",
-              "rotate-90",
-            )}
-          >
-            <Image
-              className={c("object-contain", "shadow-md", "rounded-2xl")}
-              src={"/carl-dk-draw-min.jpg"}
-              alt="carl drawn by daisy kong"
-              width={500}
-              height={500}
-              placeholder="blur"
-            />
-            <p className={c("text-lg", "text-gray-500", "pt-2")}>
-              drawn by @daisykong__
-            </p>
-          </div>
-        </div> */}
     </Layout>
   );
 }

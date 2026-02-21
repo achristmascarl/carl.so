@@ -74,7 +74,7 @@ export default function Home() {
               "md:pt-20",
             )}
           >
-            <h1>hi, i&apos;m carl</h1>
+            <h1>Hi, I&apos;m Carl</h1>
             <Tab.Group
               onChange={(index) => {
                 setPictureIndex(index);
